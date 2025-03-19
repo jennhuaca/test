@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: #f0f0f0; /* Set the background color */
+  overflow: hidden; /* Hide anything that falls outside of the viewport */
+  position: relative;
+}
+
+.falling-leaves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; /* Ensures leaves don't interfere with user interaction */
+}
+
+.leaf {
+  position: absolute;
+  background-image: url('maple-leaf.png'); /* Add the path to your maple leaf image */
+  background-size: cover;
+  width: 50px; /* Adjust the size of the leaves */
+  height: 50px;
+  opacity: 0.8;
+  animation: fall 10s linear infinite, rotate 5s linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
